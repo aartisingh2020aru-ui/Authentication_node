@@ -17,7 +17,7 @@ exports.register = async(req,res)=>{
 
         if(password !== confirm_password){
             return res.status(400).json({mes: "passwords do not match"});
-        }
+        }   
 
         const hashedPassword = await bcrypt.hash(password,10);
         const user = await User.create({
